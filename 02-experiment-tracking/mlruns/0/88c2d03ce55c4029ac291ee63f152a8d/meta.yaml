@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/88c2d03ce55c4029ac291ee63f152a8d/artifacts
+deleted_time: 1747684480300
+end_time: 1747684075984
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 88c2d03ce55c4029ac291ee63f152a8d
+run_name: bustling-trout-408
+run_uuid: 88c2d03ce55c4029ac291ee63f152a8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747684060598
+status: 4
+tags: []
+user_id: codespace

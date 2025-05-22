@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/5c363775b1a143be93e0686b7ac80a79/artifacts
+end_time: 1747684630954
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5c363775b1a143be93e0686b7ac80a79
+run_name: bright-cod-883
+run_uuid: 5c363775b1a143be93e0686b7ac80a79
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747684613397
+status: 3
+tags: []
+user_id: codespace

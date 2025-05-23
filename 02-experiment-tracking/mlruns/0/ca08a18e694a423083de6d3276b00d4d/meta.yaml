@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/ca08a18e694a423083de6d3276b00d4d/artifacts
+end_time: 1748022668485
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ca08a18e694a423083de6d3276b00d4d
+run_name: handsome-stoat-962
+run_uuid: ca08a18e694a423083de6d3276b00d4d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748022645482
+status: 3
+tags: []
+user_id: jdanussi

@@ -5,6 +5,6 @@ profile: '{"features_shape": [65946, 5702], "features_size": 376024092, "feature
 schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
   {\"dtype\": \"float64\", \"shape\": [-1, 5702]}}]", "targets": "[{\"type\": \"tensor\",
   \"tensor-spec\": {\"dtype\": \"float64\", \"shape\": [-1]}}]"}}'
-source: '{"tags": {"mlflow.user": "codespace", "mlflow.source.name": "train.py", "mlflow.source.type":
-  "LOCAL", "mlflow.source.git.commit": "d39ddaaebede954e57ac3492602a8d212cee380c"}}'
+source: '{"tags": {"mlflow.user": "jdanussi", "mlflow.source.name": "train.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "3203592f6a4a016a1cf2fa47a030411eecbf0f26"}}'
 source_type: code

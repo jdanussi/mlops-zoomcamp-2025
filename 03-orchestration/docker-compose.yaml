@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  mlflow_db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: mlflow
+      POSTGRES_PASSWORD: mlflow
+      POSTGRES_DB: mlflow
+    volumes:
+      - mlflow-db-data:/var/lib/postgresql/data
+
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.mlflow
+    environment:
+      BACKEND_STORE_URI: postgresql://mlflow:mlflow@mlflow_db/mlflow
+      ARTIFACT_ROOT: /mlflow/artifacts
+    command: >
+      mlflow server
+      --backend-store-uri postgresql://mlflow:mlflow@mlflow_db/mlflow
+      --default-artifact-root /mlflow/artifacts
+      --host 0.0.0.0
+      --port 5000
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlflow:/mlflow
+    depends_on:
+      - mlflow_db
+
+
+  airflow_db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - airflow-db-data:/var/lib/postgresql/data
+
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    image: custom-airflow:latest
+    restart: always
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__FERNET_KEY: q_GBd0Xrer9tup7QTCRENgV1EgzXz2cti2so5TyfaTI=
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow_db/airflow
+      PYTHONPATH: /opt/airflow
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./pipeline:/opt/airflow/pipeline
+      - ./models:/opt/airflow/models
+      - ./mlflow:/mlflow  # To share model artifacts
+    ports:
+      - "8080:8080"
+    command: bash -c "airflow db init && airflow users create \
+                      --username admin \
+                      --firstname Firstname \
+                      --lastname Lastname \
+                      --role Admin \
+                      --email admin@example.org \
+                      --password admin && \
+                      airflow scheduler & airflow webserver"
+    depends_on:
+      - airflow_db
+      - mlflow
+
+volumes:
+  mlflow-db-data:
+  airflow-db-data:

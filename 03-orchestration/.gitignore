@@ -1,7 +1,0 @@
-# Ignore all model artifacts except preprocessor.b
-pipeline/models/*
-!pipeline/models/preprocessor.b
-
-03-orchestration/_video
-03-orchestration/_backup
-

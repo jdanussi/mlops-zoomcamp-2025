@@ -1,0 +1,7 @@
+# Ignore all model artifacts except preprocessor.b
+03-orchestration/pipeline/models/*
+!03-orchestration/pipeline/models/preprocessor.b
+
+# Ignore these two folders and their contents
+03-orchestration/_video/
+03-orchestration/_backup/

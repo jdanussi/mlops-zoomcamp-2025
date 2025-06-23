@@ -5,3 +5,7 @@
 # Ignore these two folders and their contents
 03-orchestration/_video/
 03-orchestration/_backup/
+
+# Ignore from 04-deployment
+04-deployment/.ipynb_checkpoints
+04-deployment/output/

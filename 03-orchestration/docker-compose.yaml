@@ -45,7 +45,7 @@ services:
       context: .
       dockerfile: Dockerfile.airflow
     image: custom-airflow:latest
-    restart: always
+    restart: unless-stopped
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__FERNET_KEY: q_GBd0Xrer9tup7QTCRENgV1EgzXz2cti2so5TyfaTI=

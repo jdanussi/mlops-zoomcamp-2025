@@ -9,3 +9,6 @@
 # Ignore from 04-deployment
 04-deployment/.ipynb_checkpoints
 04-deployment/output/
+
+# Ignore from 05-monitoring
+05-monitoring/.ipynb_checkpoints

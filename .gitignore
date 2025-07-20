@@ -1,3 +1,5 @@
+.vscode/
+
 # Ignore all model artifacts except preprocessor.b
 03-orchestration/pipeline/models/*
 !03-orchestration/pipeline/models/preprocessor.b
@@ -12,3 +14,11 @@
 
 # Ignore from 05-monitoring
 05-monitoring/.ipynb_checkpoints
+
+# Ignore from 06-best-practices
+06-best-practices/.ipynb_checkpoints
+06-best-practices/__pycache__
+06-best-practices/tests/__pycache__
+06-best-practices/integration_tests/__pycache__
+06-best-practices/data
+06-best-practices/taxi_type=yellow_year=2023_month=03.parquet
